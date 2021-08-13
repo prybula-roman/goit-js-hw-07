@@ -8,8 +8,8 @@ const ingredients = [
 ];
 
 const ulIngr = document.querySelector('#ingredients');
-for (let i = 0; i != ingredients.length; i++) {
-  const elem = document.createElement('li');
-  elem.textContent = ingredients[i];
-  ulIngr.appendChild(elem);
-}
+let str = '';
+ingredients.forEach(elem => {
+  str += `<li>${elem}</li>`;
+});
+ulIngr.insertAdjacentHTML('afterbegin', str);
